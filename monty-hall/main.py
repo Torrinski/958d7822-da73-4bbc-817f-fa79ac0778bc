@@ -33,8 +33,12 @@ class Main(object):
     @staticmethod
     def play_multiple_games(strategy="random", times=100, opts=3, save=""):
         # TODO: implement multiple games
-        raise NotImplementedError
+        results=list(map(lambda x:play_random_game(number_of_options=opts,strategy=strategy),range(times)))
+        print(results)
+        if save:
+            results.to_csv(save)
+        #raise NotImplementedError
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     fire.Fire(Main)
